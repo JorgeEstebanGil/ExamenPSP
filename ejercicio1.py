@@ -6,25 +6,15 @@ import time
 #Clase productor
 class Producer(threading.Thread):
     """
-    Produces random integers to a list
+    Crea números aleatorios para meterlos en una lista
     """
 
     def __init__(self, queue, PT):
-        """
-        ConstruCTor.
-
-        @param integers list of integers
-        @param event event synchronization objeCT
-        """
         threading.Thread.__init__(self)
         self.queue = queue
         self.PT = PT
     
     def run(self):
-        """
-        Thread run method. Append random integers to the integers list
-        at random time.
-        """
         while True:
             for _ in range(15):
                 num = random.randint(100, 500)
@@ -34,26 +24,14 @@ class Producer(threading.Thread):
 
 #Clase consumidor
 class Consumer(threading.Thread):
-    """
-    Consumes random integers from a list
-    """
 
     def __init__(self, queue,CT,X):
-        """
-        ConstruCTor.
-
-        @param integers list of integers
-        @param event event synchronization objeCT
-        """
         threading.Thread.__init__(self)
         self.queue = queue
         self.CT = CT
         self.X = X
     
     def run(self):
-        """
-        Thread run method. Consumes integers from list
-        """
         while True:
             numeros = []
             for i in range(self.X):
