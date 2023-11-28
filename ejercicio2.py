@@ -17,7 +17,7 @@ def code(name):
 
 # Creacion hilos
 threads = []
-for i in range(5):
+for i in range(4):
     thread = threading.Thread(target=code, args=(i,))
     thread.start()
     threads.append(thread)
