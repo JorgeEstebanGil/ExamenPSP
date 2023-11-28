@@ -5,10 +5,7 @@ import time
 
 #Clase productor
 class Producer(threading.Thread):
-    """
-    Crea números aleatorios para meterlos en una lista
-    """
-
+    
     def __init__(self, queue, PT):
         threading.Thread.__init__(self)
         self.queue = queue
